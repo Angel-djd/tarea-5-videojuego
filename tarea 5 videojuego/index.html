@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Torneo Gaming</title>
+</head>
+<body>
+    <header>
+        <h1>TORNEO GAMING</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Catálogo</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Torneo</a></li>
+            <li><a href="#" id="game-link">Game</a></li>
+            <li><a href="#">Sobre nosotros</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Inscripción Torneo</h1>
+        <form id="registroForm">
+            <div class="form-group">
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="nacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="nacimiento" name="nacimiento" required>
+            </div>
+            <div class="form-group">
+                <label for="torneo">Torneo:</label>
+                <select id="torneo" name="torneo" required>
+                    <option value="">Seleccione un torneo</option>
+                    <option value="LOL">League of Legends (LOL)</option>
+                    <option value="Fornite">Fortnite</option>
+                    <option value="Valorant">Valorant</option>
+                    <option value="Left4Dead">Left 4 Dead</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="pago">Monto de Pago (S/ 100.00):</label>
+                <input type="number" id="pago" name="pago" min="0" step="0.01" required>
+            </div>
+            <button type="submit">Inscribirse</button>
+        </form>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title">Resultado de Inscripción</h2>
+            <p id="modal-message"></p>
+            <button class="close-modal">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="game-section">
+        <div class="game-container">
+            <h2>GARBAGE COLLECTOR</h2>
+            <p>Recoge 10 basuritas en 60 segundos!</p>
+            <div id="game-board"></div>
+            <div class="game-info">
+                <p>Tiempo: <span id="time">60</span>s</p>
+                <p>Basura: <span id="score">0</span>/10</p>
+                <button id="start-btn">Comenzar</button>
+                <button id="back-btn">Volver al Torneo</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
